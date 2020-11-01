@@ -1,0 +1,136 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitive Programming Port - CodingTitans </title>
+    <link rel="icon" href="/assets/CP-logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/solid.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">      
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/Upcoming.css">
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top opaque">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="brand-icon" href="#"><i
+                        class="fas fa-laptop-code"></i>&nbsp;&nbsp;<b>CONTEST</b> TRACKER </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/ongoing"> Ongoing </a></li>
+                    <li id="home"><a href="/#calendar"> Calendar </a></li>
+                    <li><a id="about" href="/about"> About </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="upcoming">
+      <h1 class="h1"><strong>UPCOMING&nbsp;&nbsp;CONTESTS </strong></h1>
+    </div>
+
+    <div id="up-con">
+
+    </div>
+
+    <script>
+
+        const getTimeRemaining = starttime => {
+            const total = Date.parse(starttime) - Date.parse(new Date())
+            const seconds = Math.floor((total / 1000) % 60)
+            const minutes = Math.floor((total / 1000 / 60) % 60)
+            const hours = Math.floor((total / (1000 * 60 * 60)) % 24)
+            const days = Math.floor(total / (1000 * 60 * 60 * 24))
+
+            return {
+                total,
+                days,
+                hours,
+                minutes,
+                seconds
+            }
+        }
+
+        const initializeClock = (id, starttime) => {
+            const clock = document.getElementById(id)
+            const timeinterval = setInterval(() => {
+                const t = getTimeRemaining(starttime)
+                if(t.days == 0)
+                {
+                  clock.innerHTML = `${t.hours}h ${t.minutes}m ${t.seconds}s`
+                }
+                else
+                {
+                  if(t.days == 1)
+                  {
+                        clock.innerHTML =`${t.days} Day`
+                  }
+                  else
+                  {
+                    clock.innerHTML =`${t.days} Days`
+                  }
+                }
+                if (t.total <= 0) {
+                    clearInterval(timeinterval)
+                    clock.innerHTML = "Event Ended"
+                }
+            }, 1000)
+        }
+
+        const jsonData = `<%- data %>`
+        const data = JSON.parse(jsonData)
+        const imgUrls = {
+            1: "/assets/CF2.png",
+            //"https://it-edu.com/sites/default/files/codeforces_logo.png",
+            //"https://sirjan13.github.io/CodeBizz/images/codeforces.png"
+            2: "https://camo.githubusercontent.com/64ad646c2e6e63ae067f00e621444789c4bd17af/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f636f6465636865665f7368617265642f73697465732f616c6c2f7468656d65732f61626573736976652f6c6f676f2d332e706e67",
+            12: "/assets/TopC1.png",
+            // "/assets/topCODE4.jpg"
+            //"/assets/TOPcoderLOGO3.jpg"
+            35: "/assets/Google5.jpg",
+            // "/assets/Google2.jpg"
+            //"https://lh5.googleusercontent.com/proxy/Zp4f5VKyqZ52ozDudlmywUKr9R8JbB493U6tYC5uWERYq0yLPEIkNU48P8EsTr3ynzJT0MqB6q-R5KbTLoEKrBFVEFNKifgV7BfpjQoMBeyoxyrbUwbfw-5QLsxcnuijfmqnb3w7NS-espPaKQ9oSA63JV5Bb5FEbE2ekBBZ",
+            63: "/assets/HR2.jpg",
+            73: "/assets/HE1.jpg",
+            102: "/assets/leetcode4.png"
+        }
+        const cardParent = document.getElementById('up-con')
+        data.forEach((cardData, index) => {
+            const cardElement =
+                `
+                <div class="card">
+                    <div data-parent="#ong-con">
+                        <div class="card-body">
+                            <div class="first-card">
+                                <div class="image"><img alt="" class="img-fluid img-responsive center-block" src=${imgUrls[cardData.resource.id]}></div>
+                                <div class="event-div"><h4 class="event"><strong>${cardData.event}<strong></h4></div>
+                                <h4 class="starts-in">Starts In: <span id=${index}></span></h4>
+                                <div class="view-contest"><button class="button btn btn-success"><a href=${cardData.href} target="_blank">VIEW CONTEST &nbsp;<i class="fas fa-chevron-circle-right"></i></a></button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `
+            cardParent.innerHTML += cardElement
+        })
+        data.forEach((cardData, index) => {
+            initializeClock(index, cardData.start)
+        })
+        
+    </script>
+</body>
+
+</html>
