@@ -1,0 +1,274 @@
+html,body
+{
+    width: 100%;
+    margin: 0px;
+		padding: 0px;
+		overflow-x: hidden; 
+		/* background-color:#fb8a6d; */
+}
+
+html
+{
+		scroll-behavior: smooth;
+}
+
+/* HIDE YOUR SCROLLBAR! */
+::-webkit-scrollbar {
+	display: none;
+}
+
+#home
+{
+	width:100%;
+	height:100vh;
+	/* background-image:url("/assets/BG2.png"); */
+	/* background-image:url("https://wallpapersmug.com/download/1920x1080/4d7d03/light-colors-geometric-pattern-abstract.jpg"); */
+	/* object-fit: cover; */
+	/* background-size:1368px 660px; */
+	/* background-size: cover; */
+	/* background-repeat: no-repeat; */
+}
+.col-lg-7
+{
+ margin-top:8%;
+ margin-left:1%;
+}
+.col-lg-5
+{
+	padding-top:10%;
+	padding-right:2%;
+	/* background-color:rgb(246, 194, 163); */
+	display:inline-block;
+	width:40%;
+	/* height:100vh; */
+}
+img
+{
+	border-radius:6vw;
+}
+#calendar
+{
+	width:100%;
+	height:100vh;
+	padding-top:1%;
+}
+.opaque
+{
+	background-color: rgba(0,0,0,0);
+}
+nav
+{
+	padding-left:20px;
+	padding-right:20px;
+}
+.navbar
+{
+	margin-top: 0px;
+  margin-bottom: 0;
+	background-color: rgb(243, 240, 240);
+  /* rgb(231, 231, 231); */
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 8px -6px rgb(179, 178, 178);
+}
+.navbar-default .navbar-brand
+{
+	color: #04168a;
+  /* #0218a6 */
+  font-size: 1.61vw;
+  font-family: 'Roboto Slab', serif;
+}
+.navbar-default .navbar-brand:hover
+{
+  color: #000;
+  /* #0218a6 */
+  font-size: 1.61vw;
+  font-family: 'Roboto Slab', serif;
+}
+.navbar-right
+{
+  margin-right:-8px;
+}
+.navbar-default .navbar-nav>li>a 
+{
+	color: #04168a;
+  font-size: 1.335vw;
+  padding-left:4.5rem;
+  padding-bottom: 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+.navbar-default .navbar-nav>li>a:hover
+{
+  color: #000;
+  font-size: 1.335vw;
+  padding-left:4.5rem;
+  padding-bottom: 0px;
+  font-family: 'Montserrat', sans-serif; 
+}
+.navbar-nav>li
+{
+	display:inline-block;
+}
+.topic-div 
+{
+  margin-top:1.2%;
+  text-align:center;
+  height  : 4vw;   
+  /* 7.4rem  */
+  font-size:1.3vw;
+  position: relative;
+  z-index : 1;
+  color:#001075;
+  /* background: #eee; */
+}
+
+.topic-div:before { 
+  content : "";
+  /* height  : 5.6vw;  */
+  font-size:1.3vw;
+  position: absolute;
+  left    : 24.5%;
+  bottom  : 0;
+  height  : 5px;
+  width   : 50%;  /* or 100px */
+  border-bottom:0.36vw solid #fd9075;
+  /* #51e0a2; */
+}
+
+.h1 {
+    margin: 0;
+    text-align: center;
+    padding-top: 1.5%;
+    font-size:2.64vw;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* #sign-up
+{
+	border-radius:20px;
+	background-color:#000000;
+	color:white;
+	border:none;
+	padding-bottom:5px;
+	padding-top:5px;
+	padding-left:12px;
+	padding-right:11px;
+	margin-top:10px;
+	font-family: 'Roboto', sans-serif;
+} */
+
+.head
+{
+	color:#001075;
+	font-family: 'Montserrat', serif;
+	/* margin-left:6%; */
+	margin-top:12%;
+	text-align:center;
+	font-size:42px;
+	/* text-shadow:3px 3px 4px #000000; */
+}
+.con
+{
+	color:#001075;
+	/* margin-left:37%; */
+	margin-top:30px;
+	font-size:27px;
+	text-align:center;
+	line-height:1.5em;
+	font-family:'Roboto', sans-serif;
+	font-weight:500;
+	/* text-shadow:1px 1px 3px #000000; */
+}
+.calen-btn
+{
+	background-color: #fd673e;
+	margin-left:35.4%;
+	margin-top:3%;
+	border-radius:20rem;
+	padding-right:2%;
+	padding-left:2.1%;
+	padding-top:0.8%;
+	padding-bottom:0.9%;
+	text-align:center;
+	align-items: center;
+	display:flex;
+	width:30%;
+	color:white;
+	border:none;
+	font-size:1.1vw;
+	font-weight:200;
+	font-family: 'Montserrat', serif;
+	box-shadow: 3px 3px 5px 2px #c5c4c4;
+	/* box-shadow:1px 1px 8px 1px #262626; */
+}	
+.btn:hover
+{
+	background-color:#fd673e;
+	box-shadow: 3px 3px 6px 2px #aaaaaa;
+}
+.col-lg-11
+{
+	padding-bottom:2%;
+}
+.img-responsive
+{
+	padding-top:4%;
+	max-width:93%;
+}
+
+/* CALENDAR.CSS */
+
+/* TRYING TO MAKE CALENDAR RESPONSIVE */
+
+/* .calendar
+{
+	position: relative; 
+	padding-bottom: 52%; 
+	height: 0; 
+	overflow: hidden;
+}
+.calendar iframe 
+{
+	position: absolute; 
+	top:0; 
+	left: 0;
+	width: 90%; 
+	height: 80%; 
+	margin-left:4.7em;
+  margin-top:5%;
+} */
+
+iframe
+{
+margin-left:8.1em;
+margin-right:7.9em;
+margin-top:5%; 
+float:left;
+}
+
+/* .calendar
+{
+	margin-top:10%;
+} */
+/* .no-disp
+{
+	
+} */
+/* .topic-div
+{
+	margin-top: 0;
+	height: 100px;
+	color:#000000;
+  border-bottom: 5px solid #fd7a59;
+  border-bottom-width: 5rem;
+} */
+.topic
+{
+  margin-bottom:0.5%;
+	margin-top:2.7%;
+	padding-top:1.3rem;
+	height:5.5rem;
+	text-align:center;
+	color:#001075;
+	font-family: 'Roboto Slab', serif;
+}
