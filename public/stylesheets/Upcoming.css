@@ -1,0 +1,249 @@
+html, body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-top:1.95rem;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar 
+{
+display: none;
+} 
+
+.opaque {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+nav {
+  margin-left: 0px;
+  margin-top:80%;
+  margin-right: 0px;
+  padding-left: 1.5%;
+  padding-right: 2%;
+}
+
+.navbar {
+  margin-top: 0px;
+  margin-bottom: 0;
+  background-color: rgb(243, 240, 240);
+  /* rgb(231, 231, 231); */
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 8px -6px rgb(179, 178, 178);
+}
+
+.navbar-default .navbar-brand {
+  color: #04168a;
+  /* #0218a6 */
+  font-size: 1.61vw;
+  font-family: 'Roboto Slab', serif;
+}
+.navbar-default .navbar-brand:hover
+{
+  color: #000;
+  /* #0218a6 */
+  font-size: 1.61vw;
+  font-family: 'Roboto Slab', serif;
+}
+.navbar-right
+{
+margin-right:-8px;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #04168a;
+  font-size: 1.335vw;
+  padding-left:4.5rem;
+  padding-bottom: 0px;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family:sans-serif; */  
+}
+
+.navbar-default .navbar-nav>li>a:hover
+{
+  color: #000;
+  font-size: 1.335vw;
+  padding-left:4.5rem;
+  padding-bottom: 0px;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.navbar-nav>li {
+  display: inline-block;
+}
+
+.upcoming 
+{
+  margin-top:1.2%;
+  text-align:center;
+  height  : 5.4vw;   
+  /* 7.4rem  */
+  font-size:2.64vw;
+  position: relative;
+  z-index : 1;
+  color:#001075;
+  /* background: #eee; */
+}
+
+.upcoming:before { 
+  content : "";
+  /* height  : 5.6vw;  */
+  font-size:2.64vw;
+  position: absolute;
+  height  : 0.36vw;
+  left    : 24.4%;
+  bottom  : 0;
+  width   : 50%;  /* or 100px */
+  border-bottom:0.36vw solid #fd9075;
+  /* #51e0a2; */
+}
+
+.h1 {
+    margin: 0;
+    text-align: center;
+    padding-top: 1.5%;
+    font-size:2.64vw;
+    font-family: 'Roboto Slab', serif;
+}
+
+#up-con
+/* Tackle all cards together*/
+{
+    margin-left: 2.6rem;
+    margin-top: 4.5rem;
+}
+
+.card
+/* Tackle features of every but single card */
+{
+    margin: 5rem 2.3rem;
+    width: 20.8%;
+    height: 27.5rem;
+    display: -webkit-inline-box;
+    background-color:white;
+}
+
+.first-card {
+    width:28rem;
+    height: 27.5rem;
+    box-shadow: 0 0 20px #a1a1a1;
+}
+.first-card:hover
+{
+  /* box-shadow: 0 0 0.5pt 1.5pt black; */
+  outline: 2px solid #05157c;
+  box-shadow: 0 0 15px #a1a1a1;
+}
+.img-fluid
+{
+    width:90%;
+    height:9rem;
+    padding-right:2.4%;
+    padding-left: 2.6%;
+    margin-top:0.6%;
+    /* margin-top: -18%; */
+}
+.image
+{
+ text-align:center;
+}
+.title 
+{
+    padding-top: 9%;
+    padding-left: 2%;
+    padding-right: 3%;
+    margin-top: 0;
+    font-size:2.35rem;;
+    text-transform:uppercase;
+    text-align:center;
+}
+.row
+{
+    padding-top:5%;
+}
+.col-lg-4
+{
+    padding:0;
+}
+.col-lg-8
+{
+    padding:0;
+    margin:0;  
+}
+.event-div
+{
+  margin-top:4.5%;
+  width:100%;
+  height:5.5rem;
+  text-align:center;
+}
+.event {
+    padding-left: 5.5%;
+    padding-right: 5.5%;
+    padding-top: 2%;
+    font-size: 1.31vw;
+    text-align:center;
+    color:#201f1f;
+    font-family: 'Montserrat', sans-serif;
+}
+.starts-in {
+    /* padding-left: 15.5%; */
+    padding-top: 5%;
+    font-size: 1.35vw;
+    font-family: 'Roboto', sans-serif;
+    text-align:center;
+}
+.view-contest {
+    /* margin-left: 24%; */
+    margin-top: 6.7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Roboto', sans-serif;
+}
+.btn
+{
+  background-color: #fd7a59;
+  /* #27d388; */
+  /* #1acc7f; */
+  border: none;
+  width:48%;
+  transition:width 0.25s linear;
+}
+.btn:hover
+{
+  /* background-color: #fd673e; */
+  background-color: #fd7a59;
+  /* #27d388; */
+  /* #05157c; */
+  text-align:center;
+  width:55%;
+}
+.btn>a>i
+{
+    visibility:hidden;
+    opacity:0;
+    transition:opacity 0.5s linear;
+    /* display:inline-block; */
+}
+.btn:hover>a>i
+{
+  visibility:visible;
+  opacity:1;
+  /* display:inline-block; */
+}
+a
+{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size:1.02vw;
+    /* #05157c; */
+}
+.btn:hover > a
+{
+  color:white;
+  /* color:#05157c; */
+  text-decoration: none;
+  font-size:1.02vw;
+  border:none;
+}
